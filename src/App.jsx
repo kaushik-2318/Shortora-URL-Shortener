@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 
 import Preloader from "./components/preloader";
-import Navbar from "./components/navbar";
-import Header from "./components/header";
-import Link from "./components/link";
-import Statistics from "./components/statistics";
-import Footer from "./components/footer";
-import Gradient from "./components/gradient";
+import Home from "./components/home";
+import { Route, Routes } from "react-router";
+import SignInPage from "./components/sign-in";
+import SignUpPage from "./components/sign-up";
 
 export default function App() {
   const [isAppLoading, setIsAppLoading] = useState(true);
@@ -24,14 +22,13 @@ export default function App() {
 
   return (
     <>
-      <div className="text-[18px] mb-[270px] font-['Poppins'] z-10 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
-        <Gradient />
-        <Navbar />
-        <Header />
-        <Link />
-        <Statistics />
+      <div className="text-[18px]  font-['Poppins'] select-none cursor-default">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<SignInPage />} />
+          <Route path="/register" element={<SignUpPage />} />
+        </Routes>
       </div>
-      <Footer />
     </>
   );
 }

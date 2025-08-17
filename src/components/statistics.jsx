@@ -4,7 +4,7 @@ import customizable from "../assets/svg/icon-fully-customizable.svg";
 
 export default function Statistics() {
   return (
-    <div className="px-30 flex items-center gap-8 py-40  justify-center flex-col ">
+    <div className="px-30 flex items-center gap-8 pt-40 justify-center flex-col ">
       <h1 className="text-4xl font-bold text-white ">Advanced Statistics</h1>
       <p className="text-neutral-gray500 text-center max-w-[500px]">
         Track how your links are performing across the web with our advanced
