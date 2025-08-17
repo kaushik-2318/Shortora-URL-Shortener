@@ -9,7 +9,7 @@ import Footer from "./components/footer";
 import Gradient from "./components/gradient";
 
 export default function App() {
-  const [isAppLoading, setIsAppLoading] = useState(false);
+  const [isAppLoading, setIsAppLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,13 +23,15 @@ export default function App() {
   }
 
   return (
-    <div className="text-[18px] font-['Poppins'] min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
-      <Gradient />
-      <Navbar />
-      <Header />
-      <Link />
-      <Statistics />
+    <>
+      <div className="text-[18px] mb-[270px] font-['Poppins'] z-10 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+        <Gradient />
+        <Navbar />
+        <Header />
+        <Link />
+        <Statistics />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }

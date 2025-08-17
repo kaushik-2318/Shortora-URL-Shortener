@@ -4,8 +4,8 @@ import customizable from "../assets/svg/icon-fully-customizable.svg";
 
 export default function Statistics() {
   return (
-    <div className="bg-[#f0f1f6] px-30 flex items-center gap-8 py-40 justify-center flex-col ">
-      <h1 className="text-4xl font-bold">Advanced Statistics</h1>
+    <div className="px-30 flex items-center gap-8 py-40  justify-center flex-col ">
+      <h1 className="text-4xl font-bold text-white ">Advanced Statistics</h1>
       <p className="text-neutral-gray500 text-center max-w-[500px]">
         Track how your links are performing across the web with our advanced
         statistics dashboard.
@@ -30,13 +30,15 @@ export default function Statistics() {
 const Card = ({ title, description, image }) => {
   return (
     <>
-      <div className="max-w-[350px] p-5 flex justify-start relative items-center rounded-xl flex-col gap-5 min-h-[270px] bg-white">
-        <div className="bg-primary-purple rounded-full -top-10 left-10 lg:absolute">
-          <img src={image.src} alt={image.alt} className="p-5" />
+      <div className="max-w-[350px]  flex justify-start relative items-center  flex-col gap-5 min-h-[270px] hover:scale-105  p-8 rounded-2xl bg-black/30 backdrop-blur-md border border-white/10 hover:border-purple-400/30 transition-all duration-300">
+        <div className=" rounded-full -top-10 left-10 lg:absolute     w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500  ">
+          <img src={image.src} alt={image.alt} className="p-4" />
         </div>
         <div className="space-y-3 mt-10">
-          <h1 className="text-xl font-bold">{title}</h1>
-          <p className="text-neutral-gray500 text-justify">{description}</p>
+          <h1 className="text-xl font-bold text-white">{title}</h1>
+          <p className="text-justify text-purple-200/80 leading-relaxed">
+            {description}
+          </p>
         </div>
       </div>
     </>
@@ -62,11 +64,9 @@ const Data = [
   },
 ];
 
-
 const offsets = [
   "lg:translate-y-[0px]",
   "lg:translate-y-[30px]",
   "lg:translate-y-[60px]",
   "lg:translate-y-[90px]",
 ];
-
