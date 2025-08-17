@@ -6,13 +6,14 @@ import Header from "./components/header";
 import Link from "./components/link";
 import Statistics from "./components/statistics";
 import Footer from "./components/footer";
+import Gradient from "./components/gradient";
 
 export default function App() {
-  const [isAppLoading, setIsAppLoading] = useState(true);
+  const [isAppLoading, setIsAppLoading] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsAppLoading(true);
+      setIsAppLoading(false);
     }, 2000);
     return () => clearTimeout(timer);
   }, []);
@@ -22,7 +23,8 @@ export default function App() {
   }
 
   return (
-    <div className="text-[18px] font-['Poppins']">
+    <div className="text-[18px] font-['Poppins'] min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+      <Gradient />
       <Navbar />
       <Header />
       <Link />
