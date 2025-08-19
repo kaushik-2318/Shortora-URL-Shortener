@@ -6,17 +6,33 @@ import cors from "cors";
 import linkRoutes from "./routes/link.routes.js";
 import getLinkRoutes from "./routes/getLinkRoutes.routes.js";
 import getHistoryRoutes from "./routes/getHistoryRoutes.routes.js";
-const app = express();
 import { clerkMiddleware } from "@clerk/express";
-
-app.use(clerkMiddleware());
-
 
 dotenv.config();
 connectDB();
 
-app.use(cors());
+const app = express();
 
+const allowedOrigins = [
+  "https://shortora.vercel.app", // your frontend (production)
+  "http://localhost:3000", // local dev
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true); // allow mobile apps / curl
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("Not allowed by CORS"), false);
+      }
+    },
+    credentials: true,
+  })
+);
+
+app.use(clerkMiddleware());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
