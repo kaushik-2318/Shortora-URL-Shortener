@@ -8,18 +8,15 @@ import getLinkRoutes from "./routes/getLinkRoutes.routes.js";
 import getHistoryRoutes from "./routes/getHistoryRoutes.routes.js";
 const app = express();
 import { clerkMiddleware } from "@clerk/express";
-dotenv.config();
 
-const corsOptions = {
-  origin: [process.env.CLIENT_URL, "http://localhost:5173"],
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
-
-connectDB();
 app.use(clerkMiddleware());
+
+
+dotenv.config();
+connectDB();
+
+app.use(cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
