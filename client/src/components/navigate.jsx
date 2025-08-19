@@ -8,7 +8,7 @@ export default function Navigate() {
   const [loading, setLoading] = useState(true);
 
   const url = window.location.pathname;
-  const pathSegment = url.split("/")[1]; // change to [2] if nested
+  const pathSegment = url.split("/")[1];
 
   useEffect(() => {
     axios
@@ -21,7 +21,6 @@ export default function Navigate() {
       .finally(() => setLoading(false));
   }, [pathSegment]);
 
-  // redirect if no password
   useEffect(() => {
     if (newUrl && !pass) {
       window.location.href = newUrl;
