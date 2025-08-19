@@ -25,15 +25,15 @@ app.use(clerkMiddleware());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/check", (req, res) => {
+  res.status(200).json({ message: "Server is up!" });
+});
 
 app.use("/auth", userRoutes);
 app.use("/link", linkRoutes);
 app.use("/getLink", getLinkRoutes);
 app.use("/history", getHistoryRoutes);
 
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "Server is up!" });
-});
 
 app.listen(3000, () => {
   console.log(`Server is running at http://localhost:3000`);
