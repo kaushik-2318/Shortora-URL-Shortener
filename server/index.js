@@ -14,14 +14,14 @@ connectDB();
 const app = express();
 
 const allowedOrigins = [
-  "https://shortora.vercel.app", // your frontend (production)
-  "http://localhost:3000", // local dev
+  "https://shortora.vercel.app",
+  "http://localhost:3000",
 ];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (!origin) return callback(null, true); // allow mobile apps / curl
+      if (!origin) return callback(null, true);
       if (allowedOrigins.includes(origin)) {
         return callback(null, true);
       } else {
