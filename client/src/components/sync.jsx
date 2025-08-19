@@ -10,9 +10,9 @@ export default function SyncUser() {
     const syncUser = async () => {
       if (isSignedIn && user) {
         try {
-          const token = await getToken(); // ✅ no template
+          const token = await getToken();
           await axios.post(
-            "http://localhost:3000/auth/sync",
+            "https://shortora-backend.vercel.app/auth/sync",
             {},
             {
               headers: {

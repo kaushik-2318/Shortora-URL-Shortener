@@ -14,7 +14,7 @@ export default function Navbar() {
     const fetch = async () => {
       const token = await getToken();
       axios
-        .get("http://localhost:3000/history", {
+        .get("https://shortora-backend.vercel.app/history", {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,

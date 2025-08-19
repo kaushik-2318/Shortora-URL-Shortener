@@ -9,7 +9,7 @@ export default function Navigate() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/getLink/${pathSegment}`)
+      .get(`https://shortora-backend.vercel.app/getLink/${pathSegment}`)
       .then((response) => {
         const { url } = response.data;
         window.location.href = url;

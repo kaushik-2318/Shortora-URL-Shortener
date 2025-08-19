@@ -9,14 +9,19 @@ import getHistoryRoutes from "./routes/getHistoryRoutes.routes.js";
 const app = express();
 import { clerkMiddleware } from "@clerk/express";
 
-app.use(clerkMiddleware());
+const corsOptions = {
+  origin: `${process.env.CLIENT_URL}`,
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
 
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
-dotenv.config();
 connectDB();
-
-app.use(cors());
-
+dotenv.config();
+app.use(clerkMiddleware());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
