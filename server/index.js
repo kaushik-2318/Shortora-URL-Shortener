@@ -8,19 +8,17 @@ import getLinkRoutes from "./routes/getLinkRoutes.routes.js";
 import getHistoryRoutes from "./routes/getHistoryRoutes.routes.js";
 const app = express();
 import { clerkMiddleware } from "@clerk/express";
+dotenv.config();
 
 const corsOptions = {
-  origin: `${process.env.CLIENT_URL}`,
+  origin: [process.env.CLIENT_URL, "http://localhost:5173"],
   credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 
 connectDB();
-dotenv.config();
 app.use(clerkMiddleware());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -33,7 +31,6 @@ app.use("/auth", userRoutes);
 app.use("/link", linkRoutes);
 app.use("/getLink", getLinkRoutes);
 app.use("/history", getHistoryRoutes);
-
 
 app.listen(3000, () => {
   console.log(`Server is running at http://localhost:3000`);
