@@ -28,3 +28,8 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #717075 transparent;
+}

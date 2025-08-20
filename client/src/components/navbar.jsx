@@ -100,7 +100,7 @@ export default function Navbar() {
                   Click to copy ShortURL
                 </div>
 
-                <div className="flex-1 overflow-y-auto">
+                <div className="flex-1 overflow-y-auto scrollbar">
                   <ul className="space-y-3 pr-2">
                     {history.map((item) => (
                       <li
