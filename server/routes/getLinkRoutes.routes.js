@@ -10,7 +10,7 @@ router.get("/:alias", async (req, res) => {
     if (!link) {
       return res.status(404).json({ error: "Link not found" });
     }
-    res.status(200).json({ url: link.url });
+    res.status(200).json({ url: link.url, pass: link.password });
   } catch (error) {
     console.error("Error fetching link:", error);
     res.status(500).json({ error: "Failed to fetch link" });

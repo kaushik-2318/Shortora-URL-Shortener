@@ -2,32 +2,28 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 export default function Navigate() {
-  const [pass, setPass] = useState("");
+  const [pass, setPass] = useState(null);
   const [newUrl, setNewUrl] = useState("");
   const [userPass, setUserPass] = useState("");
-  const [loading, setLoading] = useState(true);
 
   const url = window.location.pathname;
   const pathSegment = url.split("/")[1];
 
   useEffect(() => {
     axios
-      .get(`https://shortora-backend.vercel.app/getLink/${pathSegment}`)
+      .get(`${import.meta.env.VITE_URL}/getLink/${pathSegment}`)
       .then((res) => {
         setPass(res.data.pass);
         setNewUrl(res.data.url);
       })
-      .catch((err) => console.error("Error fetching link:", err))
-      .finally(() => setLoading(false));
+      .catch((err) => console.error("Error fetching link:", err));
   }, [pathSegment]);
 
   useEffect(() => {
-    if (newUrl && !pass) {
+    if (!pass && newUrl) {
       window.location.href = newUrl;
     }
   }, [newUrl, pass]);
-
-  if (loading) return <p className="text-white">Loading...</p>;
 
   if (pass) {
     return (
@@ -59,6 +55,5 @@ export default function Navigate() {
       </div>
     );
   }
-
   return null;
 }

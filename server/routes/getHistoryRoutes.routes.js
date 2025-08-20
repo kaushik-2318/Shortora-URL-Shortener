@@ -6,10 +6,9 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   const userId = req.auth?.userId;
 
-
-    if (!userId) {
-      return res.status(401).json({ error: "Unauthorized" });
-    }
+  if (!userId) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
 
   try {
     const history = await User.findOne({ clerkId: userId }).populate("links");

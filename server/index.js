@@ -13,10 +13,7 @@ connectDB();
 
 const app = express();
 
-const allowedOrigins = [
-  "https://shortora.vercel.app",
-  "http://localhost:3000",
-];
+const allowedOrigins = [process.env.CLIENT_URL];
 
 app.use(
   cors({
@@ -45,6 +42,6 @@ app.use("/link", linkRoutes);
 app.use("/getLink", getLinkRoutes);
 app.use("/history", getHistoryRoutes);
 
-app.listen(3000, () => {
-  console.log(`Server is running at http://localhost:3000`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running at http://localhost:${process.env.PORT}`);
 });

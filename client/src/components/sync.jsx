@@ -12,7 +12,7 @@ export default function SyncUser() {
         try {
           const token = await getToken();
           await axios.post(
-            "https://shortora-backend.vercel.app/auth/sync",
+            `${import.meta.env.VITE_URL}/auth/sync`,
             {},
             {
               headers: {

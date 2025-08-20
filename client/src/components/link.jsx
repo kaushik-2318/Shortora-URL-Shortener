@@ -54,7 +54,7 @@ export default function Link() {
     const token = await getToken();
 
     await axios
-      .post("https://shortora-backend.vercel.app/link", newShortened, {
+      .post(`${import.meta.env.VITE_URL}/link`, newShortened, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,

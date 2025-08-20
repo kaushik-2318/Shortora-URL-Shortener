@@ -30,7 +30,7 @@ export default function Statistics() {
 const Card = ({ title, description, image }) => {
   return (
     <>
-      <div className="max-w-[350px]  flex justify-start relative items-center  flex-col gap-5 min-h-[270px] hover:scale-105  p-8 rounded-2xl bg-black/30 backdrop-blur-md border border-white/10 hover:border-purple-400/30 transition-all duration-300">
+      <div className="max-w-[350px]  flex justify-start relative items-center  flex-col gap-5 min-h-[270px] hover:scale-105  p-8 rounded-2xl backdrop-blur-md border border-white/10 hover:border-purple-400/30 transition-all duration-300">
         <div className=" rounded-full -top-10 left-10 lg:absolute     w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500  ">
           <img src={image.src} alt={image.alt} className="p-4" />
         </div>
