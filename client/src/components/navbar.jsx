@@ -119,7 +119,11 @@ export default function Navbar() {
 
                 <div className="text-center mt-4">
                   Made By{" "}
-                  <a href="https://kaushikverma.me/" className="underline">
+                  <a
+                    href="https://kaushikverma.me/"
+                    className="underline"
+                    target="_blank"
+                  >
                     Kaushik
                   </a>{" "}
                   with ❤️

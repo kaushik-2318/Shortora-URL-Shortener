@@ -17,7 +17,17 @@ A modern, full-stack URL shortening service built with React and Node.js. Create
 - **Frontend**: [https://shortora.vercel.app](https://shortora.vercel.app)
 - **API**: Deployed on Vercel
 
-## 🛠️ Tech Stack
+## � Screenshots
+
+### Home Page
+![Home Page](./client/public/image.png)
+*Clean and intuitive interface for creating short links*
+
+### Link Creation
+![Link Creation](./client/public/link.png)
+*Simple form to create custom short links with optional password protection*
+
+## �🛠️ Tech Stack
 
 ### Frontend
 - **React 19** - Modern React with latest features
@@ -96,6 +106,7 @@ URL Shortener/
    MONGODB_URI=your_mongodb_connection_string
    CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
    CLERK_SECRET_KEY=your_clerk_secret_key
+   CLIENT_URL=http://localhost:5173
    PORT=3000
    ```
 
@@ -144,28 +155,6 @@ http://localhost:3000
 - **POST** `/link` - Create a new short link
 - **GET** `/getLink/:alias` - Retrieve original URL by alias
 - **GET** `/history` - Get user's link history
-
-### Request/Response Examples
-
-#### Create Short Link
-```bash
-POST /link
-Content-Type: application/json
-
-{
-  "originalUrl": "https://example.com",
-  "alias": "my-link",
-  "password": "optional-password"
-}
-```
-
-Response:
-```json
-{
-  "message": "Link created",
-  "link": "short-url-id"
-}
-```
 
 ## 🔧 Development
 
