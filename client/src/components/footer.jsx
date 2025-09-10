@@ -55,7 +55,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      {/* <div>
+      <div>
         <div className="text-center  text-white py-5 bg-[#232027]">
           Made By{" "}
           <a
@@ -67,7 +67,7 @@ export default function Footer() {
           </a>{" "}
           with ❤️
         </div>
-      </div> */}
+      </div>
     </>
   );
 }
