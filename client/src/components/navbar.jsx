@@ -117,7 +117,7 @@ export default function Navbar() {
                   </ul>
                 </div>
 
-                <div className="text-center mt-4">
+                {/* <div className="text-center mt-4">
                   Made By{" "}
                   <a
                     href="https://kaushikverma.me/"
@@ -127,7 +127,7 @@ export default function Navbar() {
                     Kaushik
                   </a>{" "}
                   with ❤️
-                </div>
+                </div> */}
               </div>
             </>
           )}
