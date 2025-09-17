@@ -213,4 +213,4 @@ For support, email [kaushikverma321@gmail.com] or create an issue in this reposi
 
 ---
 
-Made with ❤️ by [Kaushik Verma]
+Made with ❤️ by Kaushik Verma
