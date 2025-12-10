@@ -57,15 +57,7 @@ export default function Footer() {
       </div>
       <div>
         <div className="text-center  text-white py-5 bg-[#232027]">
-          Made By{" "}
-          <a
-            href="https://kaushikverma.me/"
-            className="underline"
-            target="_blank"
-          >
-            Kaushik
-          </a>{" "}
-          with ❤️
+  
         </div>
       </div>
     </>
