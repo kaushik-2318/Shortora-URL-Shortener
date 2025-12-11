@@ -1,9 +1,4 @@
 import logo from "../assets/svg/logo-white.svg";
-import { Linkedin } from "lucide-react";
-import { Twitter } from "lucide-react";
-import { Instagram } from "lucide-react";
-
-import twitter from "../assets/svg/icon-twitter.svg";
 
 export default function Footer() {
   return (
@@ -28,30 +23,6 @@ export default function Footer() {
               <li>Developers</li>
               <li>Support</li>
             </ul>
-          </div>
-          <div className="flex justify-center items-start gap-5">
-            <a
-              href="https://www.linkedin.com/in/kaushikverma"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin className="w-7 h-7 mr-2 hover:scale-110 duration-200" />
-            </a>
-            <a
-              href="https://www.instagram.com/kaushikverma.me/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Instagram className="w-7 h-7 mr-2 hover:scale-110 duration-200" />
-            </a>
-
-            <a
-              href="https://x.com/SilentK68296830"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Twitter className="w-7 h-7 mr-2 hover:scale-110 duration-200" />
-            </a>
           </div>
         </div>
       </div>
